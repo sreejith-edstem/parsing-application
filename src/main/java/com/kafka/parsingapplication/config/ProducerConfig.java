@@ -10,7 +10,7 @@ public class ProducerConfig {
     @Bean
     public NewTopic newTopic(){
         return TopicBuilder
-                .name("parse")
+                .name("parses")
                 .build();
     }
 }
