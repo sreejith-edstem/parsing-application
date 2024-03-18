@@ -2,7 +2,6 @@ package com.kafka.parsingapplication.controller;
 
 import com.kafka.parsingapplication.service.ParseKafkaService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +15,8 @@ public class MessageController {
     private final ParseKafkaService kafkaService;
 
     @PostMapping
-    public ResponseEntity<String> sendMessage(@RequestParam("file") MultipartFile file) {
-        return kafkaService.convertAndSend(file);
+    public String upload(@RequestParam("file") MultipartFile file) throws Exception {
+        kafkaService.upload(file);
+        return "File upload successfully";
     }
 }
