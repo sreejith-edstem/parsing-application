@@ -8,7 +8,7 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class ProducerConfig {
     @Bean
-    public NewTopic newTopic(){
+    public NewTopic newTopic() {
         return TopicBuilder
                 .name("parses")
                 .build();

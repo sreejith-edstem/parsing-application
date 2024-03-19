@@ -15,8 +15,8 @@ public class MessageController {
     private final ParseKafkaService kafkaService;
 
     @PostMapping
-    public String upload(@RequestParam("file") MultipartFile file) throws Exception {
-        kafkaService.upload(file);
+    public String convertDocToJson(@RequestParam("file") MultipartFile file) throws Exception {
+        kafkaService.convertDocToJson(file);
         return "File upload successfully";
     }
 }

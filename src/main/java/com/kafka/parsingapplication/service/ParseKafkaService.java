@@ -21,7 +21,7 @@ import java.util.Map;
 public class ParseKafkaService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public void upload(MultipartFile file) throws Exception {
+    public void convertDocToJson(MultipartFile file) throws Exception {
         XWPFDocument document = new XWPFDocument(file.getInputStream());
         XWPFWordExtractor extractor = new XWPFWordExtractor(document);
 
